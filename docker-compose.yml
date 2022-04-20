@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  dart-pad:
+    build: ./dart-pad
+    image: dart-pad
+    container_name: dart-pad
+    ports:
+      - 8086:8086
+
+  dart-services:
+    build: ./dart-services
+    image: dart-services
+    container_name: dart-services
+    ports:
+      - 8085:8085
