@@ -5,7 +5,7 @@ services:
     image: dart-pad
     container_name: dart-pad
     ports:
-      - 8086:8086
+      - 8080:8086
 
   dart-services:
     build: ./dart-services

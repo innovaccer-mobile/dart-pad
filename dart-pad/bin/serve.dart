@@ -15,7 +15,7 @@ Future<void> main() async {
   final server = await io.serve(handler, '0.0.0.0', 8086)
     ..autoCompress = true;
 
-  print('Serving at http://${server.address.host}:${server.port}');
+  print('Serving at docker http://${server.address.host}:${server.port} -> machine-8080');
 }
 
 // By default allow access from everywhere.
