@@ -3,11 +3,11 @@ FROM dart:2.15.1
 WORKDIR /app/dart-pad
 
 
-# RUN export PROTOC_ZIP=protoc-3.19.4-linux-x86_64.zip
-# RUN curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.19.4/protoc-3.19.4-linux-x86_64.zip
-# RUN unzip -o protoc-3.19.4-linux-x86_64.zip -d /usr/local bin/protoc
-# RUN unzip -o protoc-3.19.4-linux-x86_64.zip -d /usr/local 'include/*'
-# RUN rm -f protoc-3.19.4-linux-x86_64.zip
+RUN export PROTOC_ZIP=protoc-3.19.4-linux-x86_64.zip
+RUN curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.19.4/protoc-3.19.4-linux-x86_64.zip
+RUN unzip -o protoc-3.19.4-linux-x86_64.zip -d /usr/local bin/protoc
+RUN unzip -o protoc-3.19.4-linux-x86_64.zip -d /usr/local 'include/*'
+RUN rm -f protoc-3.19.4-linux-x86_64.zip
 
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
