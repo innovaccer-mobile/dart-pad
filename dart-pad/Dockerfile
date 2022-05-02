@@ -23,9 +23,9 @@ RUN export PATH="$PATH":"$HOME/.pub-cache/bin"
 COPY . /app/dart-pad
 RUN dart pub global activate grinder
 RUN dart pub get
+RUN export PATH="$PATH":"$HOME/.pub-cache/bin" && grind build
 
-
-CMD export PATH="$PATH":"$HOME/.pub-cache/bin" && grind serve
+CMD export PATH="$PATH":"$HOME/.pub-cache/bin" && grind host
 #CMD dart --version
 #CMD flutter doctor -v
 #CMD protoc --version

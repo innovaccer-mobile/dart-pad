@@ -33,6 +33,15 @@ serve() async {
   });
 }
 
+@Task('Serve locally on port 8086')
+host() async {
+  await Process.start(Platform.executable, ['bin/serve.dart'])
+      .then((Process process) {
+    process.stdout.transform(utf8.decoder).listen(stdout.write);
+    process.stderr.transform(utf8.decoder).listen(stderr.write);
+  });
+}
+
 @Task('Serve via local AppEngine on port 8080')
 @Depends(build)
 serveLocalAppEngine() async {
